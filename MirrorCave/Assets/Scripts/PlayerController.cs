@@ -15,7 +15,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool mirrorZ = false;
     [SerializeField] private float iceEffect = 0.95f; // Determines how long the ice effect lasts. The closer to 1, the longer it lasts
 
+    private Rigidbody rb;
+
     private Vector3 movement;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void Start()
     {
@@ -29,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         if (status == PlayerStatus.Active)
         {
-            transform.position += movement * speed * Time.deltaTime;
+            rb.velocity = movement * speed;
             movement *= iceEffect; // Apply ice effect by reducing the movement vector over time
         }
     }
