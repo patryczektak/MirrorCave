@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         }
         if (carriedItem != null) 
         {
-            carriedItem.itemState = Item.state.Loose;
+            carriedItem.itemState = Item.State.Loose;
             carriedItem = null;
         }
     }

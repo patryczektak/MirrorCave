@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Item : Interactable
 {
-    public enum state { Loose, Picked, Locked}
-    public state itemState = state.Loose;
+    public enum State { Loose, Picked, Locked}
+    public State itemState = State.Loose;
+    public ItemType type;
     public override bool CanInteract(PlayerController player)
     {
-        return player.carriedItem == null && itemState == state.Loose;
+        return player.carriedItem == null && itemState == State.Loose;
     }
 
     public override void Interact(PlayerController player)
     {
-        if (itemState == state.Loose && player.carriedItem == null)
+        if (itemState == State.Loose && player.carriedItem == null)
         {
-            itemState = state.Picked;
+            itemState = State.Picked;
             player.carriedItem = this;
             return;
         }
