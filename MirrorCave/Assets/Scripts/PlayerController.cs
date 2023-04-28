@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -47,6 +48,18 @@ public class PlayerController : MonoBehaviour
         {
             carriedItem.transform.position = transform.position;
         }
+    }
+
+    public void Stun(float seconds)
+    {
+        status = PlayerStatus.Inactive;
+        StartCoroutine(stunDuration(seconds));
+    }
+ 
+    public IEnumerator stunDuration(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        status = PlayerStatus.Active;
     }
 
     private void Interact()
