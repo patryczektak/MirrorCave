@@ -37,8 +37,11 @@ public class InteractButton : MonoBehaviour
         }
         else
         {
-            buttonImage.color = DefaultColor;
-            
+            buttonImage.color = DefaultColor;   
+        }
+        if (assignedPlayer != null)
+        {
+            InteractText.text = assignedPlayer.interactName;
         }
     }
 }

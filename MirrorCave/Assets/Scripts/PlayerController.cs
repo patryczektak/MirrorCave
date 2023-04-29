@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public Item carriedItem = null;
+    public string interactName = "";
 
     private Vector3 movement;
 
@@ -48,6 +49,8 @@ public class PlayerController : MonoBehaviour
         {
             carriedItem.transform.position = transform.position;
         }
+        interactName = GetInteractName();
+
     }
 
     public void Stun(float seconds)
@@ -60,6 +63,26 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(secs);
         status = PlayerStatus.Active;
+    }
+
+    private string GetInteractName()
+    {
+        Interactable interactable = EntityManager.GetInteractable(this);
+        if (interactable == null)
+        {
+            if (carriedItem == null)
+            {
+                return "";
+            }
+            else
+            {
+                return "Drop";
+            }
+        }
+        else
+        {
+            return interactable.interactActionName;
+        }
     }
 
     private void Interact()

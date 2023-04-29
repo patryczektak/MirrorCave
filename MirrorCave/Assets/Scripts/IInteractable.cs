@@ -6,6 +6,7 @@ public class Interactable : MonoBehaviour
 {
 
     public float interactDistance = 2f;
+    public string interactActionName = "";
 
 
     public virtual bool CanInteract(PlayerController player)

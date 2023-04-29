@@ -19,6 +19,7 @@ public class EntityManager : MonoBehaviour
             float distance = Vector3.Distance(player.transform.position, interactable.transform.position);
             if (distance < interactable.interactDistance && distance < closestDistance && interactable.CanInteract(player))
             {
+
                 closest = interactable;
                 closestDistance = distance;
             }

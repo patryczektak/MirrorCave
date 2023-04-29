@@ -97,5 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDistance: 2
+  interactActionName: Pick up Iron Ore
   itemState: 0
   type: {fileID: 11400000, guid: 6d811d2df3463304f9c0bd4797a39114, type: 2}

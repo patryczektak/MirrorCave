@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDistance: 5
+  interactActionName: Smelt
   input: {fileID: 11400000, guid: 6d811d2df3463304f9c0bd4797a39114, type: 2}
   output: {fileID: 11400000, guid: 7a27536ad74d8a3468c972e677a30a3b, type: 2}
   processingTime: 2
