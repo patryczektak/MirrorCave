@@ -6,7 +6,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public float startingTime = 60f;
-    float timeLeft = 60f;
+    public float timeLeft = 60f;
 
     public TMP_Text timeText, scoreText;
 
@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        timeLeft = startingTime;
     }
 
     // Start is called before the first frame update
@@ -38,8 +39,8 @@ public class GameManager : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
         }
-        timeText.text = timeLeft.ToString() + "s";
-        timeText.text = "score: " + score.ToString();
+        timeText.text = timeLeft.ToString("#.##") + "s";
+        scoreText.text = "score: " + score.ToString();
     }
 
     public static void AddScore(float x)
