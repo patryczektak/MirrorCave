@@ -15,8 +15,17 @@ public class Smelter : Interactable
     public override bool CanInteract(PlayerController player)
     {
         if (!processing && player.carriedItem != null)
-            if (player.carriedItem.type == input) return true;
-        return (player.carriedItem == null && processFinished);
+            if (player.carriedItem.type == input)
+            {
+                interactActionName = "Smelt Ore";
+                return true;
+            }
+        if (player.carriedItem == null && processFinished)
+        {
+            interactActionName = "Take Out Bar";
+            return true;
+        }
+        return false;
     }
 
     public override void Interact(PlayerController player)

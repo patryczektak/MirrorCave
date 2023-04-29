@@ -47,15 +47,20 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = movement * speed;
             movement *= iceEffect; // Apply ice effect by reducing the movement vector over time
+
+            // Rotate the game object to face the direction of movement if it is moving
+            if (movement != Vector3.zero)
+            {
+                transform.LookAt(transform.position + movement);
+            }
         }
         if (carriedItem)
         {
             carriedItem.transform.position = transform.position;
         }
         interactName = GetInteractName();
-
-       
     }
+
 
     public void Stun(float seconds)
     {

@@ -93,10 +93,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 35.8
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 7211697160274858286}
   - component: {fileID: 3324220134411115336}
   - component: {fileID: 5070381977654250831}
+  - component: {fileID: 7908490418771579429}
   m_Layer: 5
   m_Name: IteractButton
   m_TagString: Untagged
@@ -425,3 +426,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 2
+--- !u!114 &7908490418771579429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587950791029331547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2461a9454494554987aa0e054afa8ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: interact
+  Hotkey: {fileID: 5050138871389827567}
+  InteractText: {fileID: 5790663910210875026}
+  assignedPlayer: {fileID: 0}
+  PressedColor: {r: 0, g: 1, b: 0.060247898, a: 1}
+  DefaultColor: {r: 1, g: 1, b: 1, a: 1}
+  buttonImage: {fileID: 5050138870007118062}
