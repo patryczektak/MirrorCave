@@ -13,6 +13,7 @@ public class Item : Interactable
     private float floatAmplitude = 0.1f; // The amplitude of the floating motion
 
     private float floatOffset = 0.0f; // The current offset from the default Y value
+    private float hoveroffset = 0.0f; // The current offset from the default Y value
 
     private void FixedUpdate()
     {
@@ -20,7 +21,7 @@ public class Item : Interactable
         {
             // Move the item towards the default Y value
             Vector3 position = transform.position;
-            position.y = Mathf.MoveTowards(position.y, defaultYValue + floatOffset, floatSpeed * Time.fixedDeltaTime);
+            position.y = Mathf.MoveTowards(position.y, defaultYValue + hoveroffset + floatOffset, floatSpeed * Time.fixedDeltaTime);
             transform.position = position;
 
             // Update the floating offset
@@ -41,5 +42,10 @@ public class Item : Interactable
             player.carriedItem = this;
             return;
         }
+    }
+
+    public void SetHoverOffset(float offset)
+    {
+        hoveroffset = offset;
     }
 }

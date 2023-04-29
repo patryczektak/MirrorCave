@@ -130,6 +130,7 @@ MonoBehaviour:
   interactDistance: 2
   interactActionName: 
   speed: 1
-  direction: {x: 0, y: 0, z: 1}
-  itemsOnBelt: []
-  maxItemDistance: 5
+  direction: {x: 1, y: 0, z: 0}
+  maxTravelDistance: 5
+  maxItemDistance: 1
+  hoverHeight: 1
