@@ -15,6 +15,9 @@ public class Item : Interactable
     private float floatOffset = 0.0f; // The current offset from the default Y value
     private float hoveroffset = 0.0f; // The current offset from the default Y value
 
+    [SerializeField]
+    private float rotationSpeed = 20.0f; // The speed of rotation
+
     private void FixedUpdate()
     {
         if (itemState == State.Loose)
@@ -26,6 +29,9 @@ public class Item : Interactable
 
             // Update the floating offset
             floatOffset = floatAmplitude * Mathf.Sin(Time.time * floatSpeed);
+
+            // Rotate the item
+            transform.Rotate(Vector3.up, rotationSpeed * Time.fixedDeltaTime);
         }
     }
 
