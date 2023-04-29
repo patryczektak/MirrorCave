@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,14 +18,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool mirrorZ = false;
     [SerializeField] private float iceEffect = 0.95f; // Determines how long the ice effect lasts. The closer to 1, the longer it lasts
 
-    private Rigidbody rb;
+    public Rigidbody rb;
 
     public Item carriedItem = null;
     public string interactName = "";
 
     public GameObject stunParticles;
 
+    public Vector3 lockedPosition;
+    private bool locked = false;
+
     private Vector3 movement;
+
+    public bool Locked { get => locked; set => locked = value; }
 
     private void Awake()
     {
@@ -59,8 +65,11 @@ public class PlayerController : MonoBehaviour
             carriedItem.transform.position = transform.position;
         }
         interactName = GetInteractName();
+        if (locked)
+        {
+            transform.position = lockedPosition;
+        }
     }
-
 
     public void Stun(float seconds)
     {
