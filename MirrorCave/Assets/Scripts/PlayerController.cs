@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public Item carriedItem = null;
     public string interactName = "";
 
+    public GameObject stunParticles;
+
     private Vector3 movement;
 
     private void Awake()
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
         KeyBindingsManager.ContinuousAction("move forward", MoveForward);
         KeyBindingsManager.ContinuousAction("move backward", MoveBackward);
         KeyBindingsManager.Action(interactAction, Interact);
+        stunParticles.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -51,18 +54,21 @@ public class PlayerController : MonoBehaviour
         }
         interactName = GetInteractName();
 
+       
     }
 
     public void Stun(float seconds)
     {
         status = PlayerStatus.Inactive;
         StartCoroutine(stunDuration(seconds));
+        stunParticles.SetActive(true);
     }
  
     public IEnumerator stunDuration(float secs)
     {
         yield return new WaitForSeconds(secs);
         status = PlayerStatus.Active;
+        stunParticles.SetActive(false);
     }
 
     private string GetInteractName()
@@ -118,5 +124,13 @@ public class PlayerController : MonoBehaviour
     private void MoveBackward()
     {
         movement.z += (mirrorZ ? -acceleratrion : acceleratrion) * Time.deltaTime;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == 6)
+        {
+            Stun(3);
+        }
     }
 }
