@@ -18,6 +18,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool mirrorZ = false;
     [SerializeField] private float iceEffect = 0.95f; // Determines how long the ice effect lasts. The closer to 1, the longer it lasts
 
+    //Default Y coordinate and some fluff
+    private float defaultYValue = 1.5f; // The default Y value
+    private float floatSpeed = 5.0f; // The speed at which the item floats
+
+
+
     public Rigidbody rb;
 
     public Item carriedItem = null;
@@ -65,6 +71,9 @@ public class PlayerController : MonoBehaviour
             carriedItem.transform.position = transform.position;
         }
         interactName = GetInteractName();
+        Vector3 position = transform.position;
+        position.y = Mathf.MoveTowards(position.y, defaultYValue, floatSpeed * Time.fixedDeltaTime);
+        transform.position = position;
         if (locked)
         {
             transform.position = lockedPosition;
