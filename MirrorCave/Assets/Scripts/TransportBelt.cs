@@ -14,6 +14,7 @@ public class TransportBelt : Interactable
     private void Update()
     {
         List<Item> itemsToRemove = new List<Item>();
+        Dictionary<Item, float> itemsToUpdate = new Dictionary<Item, float>();
 
         // Move each item along the belt
         foreach (KeyValuePair<Item, float> kvp in itemsOnBelt)
@@ -35,9 +36,15 @@ public class TransportBelt : Interactable
                 else
                 {
                     // Update the distance travelled
-                    itemsOnBelt[item] = distanceTravelled;
+                    itemsToUpdate[item] = distanceTravelled;
                 }
             }
+        }
+
+        // Update items that have not reached the end of the belt
+        foreach (KeyValuePair<Item, float> kvp in itemsToUpdate)
+        {
+            itemsOnBelt[kvp.Key] = kvp.Value;
         }
 
         // Remove items that have reached the end of the belt
