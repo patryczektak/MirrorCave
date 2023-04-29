@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerStatus status;
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float acceleratrion = 5.0f;
-    [SerializeField] private string interactAction = "";
+    [SerializeField] public string interactAction = "";
     [SerializeField] private bool mirrorX = false;
     [SerializeField] private bool mirrorZ = false;
     [SerializeField] private float iceEffect = 0.95f; // Determines how long the ice effect lasts. The closer to 1, the longer it lasts

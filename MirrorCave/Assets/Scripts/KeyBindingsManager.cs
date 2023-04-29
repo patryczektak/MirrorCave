@@ -83,4 +83,21 @@ public class KeyBindingsManager : MonoBehaviour
             Instance.continuousActionEvents[action].Add(actionCallback);
         }
     }
+
+    public static string GetActionHotkey(string action)
+    {
+        if (Instance != null)
+        {
+            foreach (KeyBinding binding in Instance.keyBindings)
+            {
+                if (binding.action == action)
+                {
+                    return binding.keyCode.ToString();
+                }
+            }
+        }
+
+        return null;
+    }
+
 }
