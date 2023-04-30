@@ -13328,8 +13328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9e7e839f0aaa84bbf0d15f5c41ef23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 60
-  timeLeft: 60
+  startingTime: 90
+  timeLeft: 90
   timeText: {fileID: 1152715452}
   scoreText: {fileID: 1527012552}
   finalScoreText: {fileID: 748314815}
