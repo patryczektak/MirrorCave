@@ -445,3 +445,4 @@ MonoBehaviour:
   PressedColor: {r: 0, g: 1, b: 0.060247898, a: 1}
   DefaultColor: {r: 1, g: 1, b: 1, a: 1}
   buttonImage: {fileID: 5050138870007118062}
+  frameImage: {fileID: 5070381977654250831}

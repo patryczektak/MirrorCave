@@ -13,7 +13,6 @@ public class ItemDropoff : Interactable
         if (player.carriedItem == null) return false;
         if (player.carriedItem.type == itemType) return true;
         return false;
-
     }
 
     public override void Interact(PlayerController player)

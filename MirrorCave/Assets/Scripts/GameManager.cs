@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
         if (gameStarted)
         {
             timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
+            {
+                EndGame();
+            }
         }
         timeText.text = timeLeft.ToString("#.##") + "s";
         scoreText.text = "score: " + score.ToString();
@@ -46,6 +50,12 @@ public class GameManager : MonoBehaviour
     public static void AddScore(float x)
     {
         Instance.score += x;
+    }
+
+    private void EndGame()
+    {
+        gameStarted = false;
+        Debug.LogWarning("END GAME MOCKUP");
     }
 
 }

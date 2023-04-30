@@ -16,10 +16,14 @@ public class EntityManager : MonoBehaviour
 
         foreach (Interactable interactable in Instance.interactables)
         {
-            float distance = Vector3.Distance(player.transform.position, interactable.transform.position);
+            Vector3 playerPosition = player.transform.position;
+            Vector3 interactablePosition = interactable.transform.position;
+
+            // Calculate 2D distance by ignoring the Y axis
+            float distance = Vector2.Distance(new Vector2(playerPosition.x, playerPosition.z), new Vector2(interactablePosition.x, interactablePosition.z));
+
             if (distance < interactable.interactDistance && distance < closestDistance && interactable.CanInteract(player))
             {
-
                 closest = interactable;
                 closestDistance = distance;
             }
@@ -37,7 +41,7 @@ public class EntityManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        interactables = new();
+        interactables = new List<Interactable>();
     }
 
 

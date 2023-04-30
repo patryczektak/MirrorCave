@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private bool locked = false;
 
     private Vector3 movement;
+    [SerializeField] internal Color playerColor;
 
     public bool Locked { get => locked; set => locked = value; }
 

@@ -11,7 +11,7 @@ public class InteractButton : MonoBehaviour
     [SerializeField] TMP_Text Hotkey, InteractText;
     [SerializeField] PlayerController assignedPlayer;
     [SerializeField] Color PressedColor, DefaultColor;
-    [SerializeField] Image buttonImage;
+    [SerializeField] Image buttonImage, frameImage;
 
     bool keyPressed;
 
@@ -21,6 +21,7 @@ public class InteractButton : MonoBehaviour
         if (assignedPlayer != null)
         {
             action = assignedPlayer.interactAction;
+            frameImage.color = assignedPlayer.playerColor;
         }
         Hotkey.text = KeyBindingsManager.GetActionHotkey(action);
         KeyBindingsManager.ContinuousAction(action, () => keyPressed = true);
