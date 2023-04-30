@@ -12,7 +12,7 @@ public class Smelter : Interactable
     public bool processing = false;
     public bool processFinished = false;
 
-    [SerializeField] private GameObject particleObject;
+    [SerializeField] private GameObject particleObject, particleFinished;
 
     public override bool CanInteract(PlayerController player)
     {
@@ -53,6 +53,7 @@ public class Smelter : Interactable
             go.GetComponent<Item>().itemState = Item.State.Picked;
             player.carriedItem = go.GetComponent<Item>();
 
+            particleFinished.SetActive(false);
             contents = null;
             processFinished = false;
             processing = false;
@@ -67,6 +68,7 @@ public class Smelter : Interactable
             processingTimer -= Time.deltaTime;
             if (processingTimer < 0)
             {
+                particleFinished.SetActive(true);
                 processFinished = true;
                 particleObject.SetActive(false);
             }
