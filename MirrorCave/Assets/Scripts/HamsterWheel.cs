@@ -22,6 +22,10 @@ public class HamsterWheel : Interactable
             charge = Mathf.Max(0, charge); // Ensure charge doesn't go below 0
 
             wheelTransform.localEulerAngles = new Vector3(charge * 360f, 0f, 90f);
+            
+            Vector3 drillPos = drillTransform.localPosition;
+            drillPos.y = 4f - charge;
+            drillTransform.localPosition = drillPos;
 
             if (charge >= maxCharge)
             {
@@ -32,6 +36,7 @@ public class HamsterWheel : Interactable
                 Instantiate(itemPrefab, spawnItemPosition.position, Quaternion.identity);
             }
         }
+        drillTransform.localEulerAngles = new Vector3(0f, Time.time * 720f, 0f);
     }
 
 public override bool CanInteract(PlayerController player)
