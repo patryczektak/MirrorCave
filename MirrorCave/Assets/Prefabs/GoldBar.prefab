@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3646171348262204093}
   - component: {fileID: 3646171348262204095}
   m_Layer: 0
-  m_Name: Steel
+  m_Name: GoldBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   interactDistance: 2
   interactActionName: Pick up Iron Ore
   itemState: 0
-  type: {fileID: 11400000, guid: 7a27536ad74d8a3468c972e677a30a3b, type: 2}
+  type: {fileID: 11400000, guid: ddd9d57fc909595409fb68659b3f674a, type: 2}
   rotationSpeed: 20
 --- !u!1 &4052390960712875616
 GameObject:
@@ -165,7 +165,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 12d1256f7fe84f54b8308d5846b4c059, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -262,7 +262,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 12d1256f7fe84f54b8308d5846b4c059, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
