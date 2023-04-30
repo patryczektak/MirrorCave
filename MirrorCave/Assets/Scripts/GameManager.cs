@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public float startingTime = 60f;
     public float timeLeft = 60f;
 
-    public TMP_Text timeText, scoreText;
+    public TMP_Text timeText, scoreText, finalScoreText;
+    public GameObject endScreen;
 
     bool gameStarted = true;
     float score = 0;
@@ -45,17 +47,22 @@ public class GameManager : MonoBehaviour
         }
         timeText.text = timeLeft.ToString("#.##") + "s";
         scoreText.text = "Score:\n" + score.ToString();
+
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public static void AddScore(float x)
     {
+        if (!Instance.gameStarted) return;
         Instance.score += x;
     }
 
     private void EndGame()
     {
         gameStarted = false;
-        Debug.LogWarning("END GAME MOCKUP");
+        endScreen.SetActive(true);
+        finalScoreText.text = "Your Score: " + score.ToString();
     }
 
 }
