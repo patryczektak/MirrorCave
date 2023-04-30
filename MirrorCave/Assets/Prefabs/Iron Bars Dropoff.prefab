@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDistance: 3
-  interactActionName: Deposit Iron Bars
+  interactActionName: Deposit Iron
   itemType: {fileID: 11400000, guid: 7a27536ad74d8a3468c972e677a30a3b, type: 2}
   pointsPerItem: 5
 --- !u!1001 &4646391874197053992
