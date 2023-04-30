@@ -13,7 +13,6 @@ public class DualInputCharger : Interactable
     private Item item1 = null;
     private Item item2 = null;
     private float lastAngle = 0f;
-    private int rotationCount = 0;
 
     private void FixedUpdate()
     {
@@ -97,7 +96,6 @@ public class DualInputCharger : Interactable
         {
             chargingPlayer = null;
             lastAngle = 0f;
-            rotationCount = 0;
         }
         else if (item1 != null && item2 != null && chargingPlayer == null)
         {

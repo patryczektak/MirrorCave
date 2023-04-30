@@ -7,7 +7,12 @@ public class TransportBelt : Interactable
     [SerializeField] private Vector3 direction = Vector3.forward;
     [SerializeField] private float maxTravelDistance = 5f;
     [SerializeField] private float maxItemDistance = 0.5f;
+
     [SerializeField] private float hoverHeight = 1f;
+    [SerializeField] private float beltwidth = 0.5f;
+    [SerializeField] private Transform beltStart;
+
+
 
     private Dictionary<Item, float> itemsOnBelt = new Dictionary<Item, float>();
 
@@ -84,6 +89,7 @@ public class TransportBelt : Interactable
         if (player.carriedItem != null)
         {
             player.carriedItem.itemState = Item.State.Loose;
+            player.carriedItem.transform.position = beltStart.position + new Vector3(Random.Range(-beltwidth, beltwidth), 0f, Random.Range(-beltwidth, beltwidth));
             itemsOnBelt[player.carriedItem] = 0f; // Initialize distance travelled
             player.carriedItem.SetHoverOffset(transform.position.y + hoverHeight);
             player.carriedItem = null;
