@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactDistance: 3
   interactActionName: 
-  speed: 1
+  speed: 2
   direction: {x: 1, y: 0, z: 0}
   maxTravelDistance: 5
   maxItemDistance: 1

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3646171348262204093}
   - component: {fileID: 3646171348262204095}
   m_Layer: 0
-  m_Name: Steel
+  m_Name: Iron Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactDistance: 2
-  interactActionName: Pick up Iron Ore
+  interactActionName: Pick Up Iron Bar
   itemState: 0
   type: {fileID: 11400000, guid: 7a27536ad74d8a3468c972e677a30a3b, type: 2}
   rotationSpeed: 20

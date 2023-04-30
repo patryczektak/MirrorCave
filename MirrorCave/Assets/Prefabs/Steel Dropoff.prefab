@@ -76,8 +76,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a48ee25e5a1f34cb36678ee443d417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 3
-  interactActionName: Deposit Steel
+  interactDistance: 2
+  interactActionName: Deposit Gold
   itemType: {fileID: 11400000, guid: ddd9d57fc909595409fb68659b3f674a, type: 2}
   pointsPerItem: 25
 --- !u!1001 &4646391874197053992

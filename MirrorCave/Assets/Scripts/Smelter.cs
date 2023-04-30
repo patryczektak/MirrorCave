@@ -6,7 +6,7 @@ public class Smelter : Interactable
 {
 
     public ItemType input;
-    public ItemType output;
+    public GameObject output;
     private Item contents;
     public float processingTime = 2f, processingTimer;
     public bool processing = false;
@@ -46,9 +46,13 @@ public class Smelter : Interactable
         }
         if (player.carriedItem == null && processFinished)
         {
-            contents.type = output;
-            contents.itemState = Item.State.Picked;
-            player.carriedItem = contents;
+
+            Destroy(contents.gameObject);
+            GameObject go = Instantiate(output);
+
+            go.GetComponent<Item>().itemState = Item.State.Picked;
+            player.carriedItem = go.GetComponent<Item>();
+
             contents = null;
             processFinished = false;
             processing = false;
