@@ -14190,6 +14190,7 @@ MonoBehaviour:
   finalScoreText: {fileID: 748314815}
   endScreen: {fileID: 1700843676}
   startScreen: {fileID: 590959639}
+  scoreAudioPlay: {fileID: 1867777718}
 --- !u!114 &730224142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14679,6 +14680,11 @@ PrefabInstance:
       propertyPath: interactAction
       value: interact U
       objectReference: {fileID: 0}
+    - target: {fileID: 294575909699765793, guid: 1a816500a10769340a0f43cb6458f7f6,
+        type: 3}
+      propertyPath: audioOnInteract
+      value: 
+      objectReference: {fileID: 1478446469}
     - target: {fileID: 294575909699765797, guid: 1a816500a10769340a0f43cb6458f7f6,
         type: 3}
       propertyPath: m_RootOrder
@@ -15555,12 +15561,12 @@ PrefabInstance:
     - target: {fileID: 7291862696612948492, guid: daf65b30eee469a4b97c0192e16a0a6f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7291862696612948492, guid: daf65b30eee469a4b97c0192e16a0a6f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7291862696612948492, guid: daf65b30eee469a4b97c0192e16a0a6f,
         type: 3}
@@ -17957,6 +17963,11 @@ PrefabInstance:
       propertyPath: interactAction
       value: interact P
       objectReference: {fileID: 0}
+    - target: {fileID: 294575909699765793, guid: 1a816500a10769340a0f43cb6458f7f6,
+        type: 3}
+      propertyPath: audioOnInteract
+      value: 
+      objectReference: {fileID: 1478446469}
     - target: {fileID: 294575909699765797, guid: 1a816500a10769340a0f43cb6458f7f6,
         type: 3}
       propertyPath: m_RootOrder
@@ -19983,6 +19994,11 @@ PrefabInstance:
       propertyPath: interactAction
       value: interact O
       objectReference: {fileID: 0}
+    - target: {fileID: 294575909699765793, guid: 1a816500a10769340a0f43cb6458f7f6,
+        type: 3}
+      propertyPath: audioOnInteract
+      value: 
+      objectReference: {fileID: 1478446469}
     - target: {fileID: 294575909699765797, guid: 1a816500a10769340a0f43cb6458f7f6,
         type: 3}
       propertyPath: m_RootOrder
@@ -23491,6 +23507,11 @@ PrefabInstance:
       propertyPath: interactAction
       value: interact I
       objectReference: {fileID: 0}
+    - target: {fileID: 294575909699765793, guid: 1a816500a10769340a0f43cb6458f7f6,
+        type: 3}
+      propertyPath: audioOnInteract
+      value: 
+      objectReference: {fileID: 1478446469}
     - target: {fileID: 294575909699765797, guid: 1a816500a10769340a0f43cb6458f7f6,
         type: 3}
       propertyPath: m_RootOrder

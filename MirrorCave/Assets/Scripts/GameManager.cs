@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float timeLeft = 60f;
 
     public TMP_Text timeText, scoreText, finalScoreText;
-    public GameObject endScreen, startScreen;
+    public GameObject endScreen, startScreen, scoreAudioPlay;
 
     bool gameStarted = false;
     float score = 0;
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
                 EndGame();
             }
         }
-        timeText.text = timeLeft.ToString("#.##") + "s";
+        timeText.text = timeLeft.ToString("#.#") + "s";
         scoreText.text = "Score:\n" + score.ToString();
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -60,8 +60,10 @@ public class GameManager : MonoBehaviour
 
     public static void AddScore(float x)
     {
+
         if (!Instance.gameStarted) return;
         Instance.score += x;
+        Instance.scoreAudioPlay.GetComponent<AudioSource>().Play();
     }
 
     private void EndGame()

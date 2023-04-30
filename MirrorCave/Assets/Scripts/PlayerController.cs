@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     public Item carriedItem = null;
     public string interactName = "";
 
-    public GameObject stunParticles;
+    public GameObject stunParticles, audioOnInteract;
     public Transform holdingSpot;
 
     public Vector3 lockedPosition;
@@ -126,13 +126,16 @@ public class PlayerController : MonoBehaviour
         if (interactable != null)
         {
             interactable.Interact(this);
+            audioOnInteract.GetComponent<AudioSource>().Play();
             return;
         }
         if (carriedItem != null) 
         {
             carriedItem.itemState = Item.State.Loose;
             carriedItem = null;
+            audioOnInteract.GetComponent<AudioSource>().Play();
         }
+        
     }
 
     private void MoveLeft()
