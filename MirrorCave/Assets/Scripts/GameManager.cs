@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
             }
         }
         timeText.text = timeLeft.ToString("#.##") + "s";
-        scoreText.text = "score: " + score.ToString();
+        scoreText.text = "Score:\n" + score.ToString();
     }
 
     public static void AddScore(float x)
