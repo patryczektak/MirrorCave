@@ -14,12 +14,6 @@ public class Smelter : Interactable
 
     [SerializeField] private GameObject particleObject;
 
-    public override void Start()
-    {
-        base.Start();
-        particleObject.SetActive(false);
-    }
-
     public override bool CanInteract(PlayerController player)
     {
         if (!processing && player.carriedItem != null)

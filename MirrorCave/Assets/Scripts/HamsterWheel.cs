@@ -1,6 +1,5 @@
 using UnityEngine;
 
-using UnityEngine;
 
 public class HamsterWheel : Interactable
 {
@@ -18,6 +17,8 @@ public class HamsterWheel : Interactable
     {
         if (lockedPlayer != null)
         {
+            Debug.Log(correctDirection);
+            Debug.Log(lockedPlayer.rb.velocity.normalized);
             charge += Vector3.Dot(lockedPlayer.rb.velocity.normalized, correctDirection.normalized) * Time.fixedDeltaTime;
             charge = Mathf.Max(0, charge); // Ensure charge doesn't go below 0
 
@@ -67,6 +68,7 @@ public override bool CanInteract(PlayerController player)
             player.transform.position = spawnItemPosition.position;
             player.Locked = false;
             lockedPlayer = null;
+            GetComponent<Collider>().enabled = true;
         }
         else if (lockedPlayer == null)
         {
@@ -74,6 +76,8 @@ public override bool CanInteract(PlayerController player)
             player.lockedPosition = lockedPlayerPosition.position; // Set the locked position before locking
             player.Locked = true;
             lockedPlayer = player;
+            GetComponent<Collider>().enabled = false;
+
         }
     }
 }

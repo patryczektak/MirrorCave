@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            movement = Vector3.zero;
+            if (!locked) movement = Vector3.zero;
         }
         if (carriedItem)
         {

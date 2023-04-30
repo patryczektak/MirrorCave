@@ -20,7 +20,7 @@ public class Interactable : MonoBehaviour
         Debug.LogWarning("No Interact Override");
     }
 
-    public virtual void Start()
+    private void Start()
     {
         EntityManager.Register(this);
     }
