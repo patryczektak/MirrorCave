@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public string interactName = "";
 
     public GameObject stunParticles;
+    public GameObject itemInHands;
 
     public Vector3 lockedPosition;
     private bool locked = false;
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
         KeyBindingsManager.ContinuousAction("move backward", MoveBackward);
         KeyBindingsManager.Action(interactAction, Interact);
         stunParticles.SetActive(false);
+        itemInHands.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -120,12 +122,14 @@ public class PlayerController : MonoBehaviour
         if (interactable != null)
         {
             interactable.Interact(this);
+            itemInHands.SetActive(true);
             return;
         }
         if (carriedItem != null) 
         {
             carriedItem.itemState = Item.State.Loose;
             carriedItem = null;
+            itemInHands.SetActive(false);
         }
     }
 
