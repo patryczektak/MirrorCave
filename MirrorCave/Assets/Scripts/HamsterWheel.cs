@@ -25,7 +25,7 @@ public class HamsterWheel : Interactable
             wheelTransform.localEulerAngles = new Vector3(charge * 360f, 0f, 90f);
             
             Vector3 drillPos = drillTransform.localPosition;
-            drillPos.y = 4f - charge;
+            drillPos.y = 4f - (3 * charge);
             drillTransform.localPosition = drillPos;
 
             if (charge >= maxCharge)

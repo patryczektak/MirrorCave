@@ -10,9 +10,9 @@ public class GameManager : MonoBehaviour
     public float timeLeft = 60f;
 
     public TMP_Text timeText, scoreText, finalScoreText;
-    public GameObject endScreen;
+    public GameObject endScreen, startScreen;
 
-    bool gameStarted = true;
+    bool gameStarted = false;
     float score = 0;
 
     public static GameManager Instance;
@@ -50,6 +50,12 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            gameStarted = true;
+            startScreen.SetActive(false);
+        }
+
     }
 
     public static void AddScore(float x)

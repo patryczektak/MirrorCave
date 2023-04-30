@@ -81,7 +81,7 @@ MonoBehaviour:
   interactDistance: 3
   interactActionName: Use Wheel
   charge: 0
-  maxCharge: 3
+  maxCharge: 1
   correctDirection: {x: 1, y: 0, z: 0}
   lockedPlayerPosition: {fileID: 7441387668093532451}
   spawnItemPosition: {fileID: 1289664341036238209}
