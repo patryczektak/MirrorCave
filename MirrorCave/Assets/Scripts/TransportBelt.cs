@@ -10,11 +10,16 @@ public class TransportBelt : Interactable
 
     [SerializeField] private float hoverHeight = 1f;
     [SerializeField] private float beltwidth = 0.5f;
-    [SerializeField] private Transform beltStart;
+    [SerializeField] private Transform beltStart, beltEnd;
 
 
 
     private Dictionary<Item, float> itemsOnBelt = new Dictionary<Item, float>();
+
+    private void Awake()
+    {
+        direction = (beltEnd.position - beltStart.position).normalized;
+    }
 
     private void Update()
     {

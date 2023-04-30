@@ -10,5 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb02216389c4c2945a62035be8ca84b1, type: 3}
-  m_Name: Coal
+  m_Name: GoldBar
   m_EditorClassIdentifier: 
+  interactName: Pick up Gold Bar

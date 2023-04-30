@@ -32,7 +32,10 @@ public class Item : Interactable
 
             // Rotate the item
             transform.Rotate(Vector3.up, rotationSpeed * Time.fixedDeltaTime);
+
         }
+        interactActionName = type.interactName;
+
     }
 
     public override bool CanInteract(PlayerController player)
