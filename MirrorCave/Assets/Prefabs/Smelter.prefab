@@ -32,6 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7291862696612948492}
+  - {fileID: 8391426823240875292}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,7 +47,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &412817837033700563
 Rigidbody:
@@ -80,10 +81,92 @@ MonoBehaviour:
   interactActionName: Smelt
   input: {fileID: 11400000, guid: 6d811d2df3463304f9c0bd4797a39114, type: 2}
   output: {fileID: 11400000, guid: 7a27536ad74d8a3468c972e677a30a3b, type: 2}
-  processingTime: 2
+  processingTime: 3
   processingTimer: 0
   processing: 0
   processFinished: 0
+  particleObject: {fileID: 8391426823240875293}
+--- !u!1001 &3023687208073566772
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 412817837033700567}
+    m_Modifications:
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.33199996
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.365
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.123999864
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737980164772914985, guid: e6acbede5097943409d4ea00a692e1ae,
+        type: 3}
+      propertyPath: m_Name
+      value: LavaExplosion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e6acbede5097943409d4ea00a692e1ae, type: 3}
+--- !u!4 &8391426823240875292 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6737980164772914984, guid: e6acbede5097943409d4ea00a692e1ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 3023687208073566772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8391426823240875293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6737980164772914985, guid: e6acbede5097943409d4ea00a692e1ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 3023687208073566772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7114384491714711015
 PrefabInstance:
   m_ObjectHideFlags: 0

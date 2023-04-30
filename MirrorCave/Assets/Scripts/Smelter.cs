@@ -12,6 +12,14 @@ public class Smelter : Interactable
     public bool processing = false;
     public bool processFinished = false;
 
+    [SerializeField] private GameObject particleObject;
+
+    public override void Start()
+    {
+        base.Start();
+        particleObject.SetActive(false);
+    }
+
     public override bool CanInteract(PlayerController player)
     {
         if (!processing && player.carriedItem != null)
@@ -39,6 +47,7 @@ public class Smelter : Interactable
             contents.transform.position = transform.position;
             processing = true;
             processingTimer = processingTime;
+            particleObject.SetActive(true);
             return;
         }
         if (player.carriedItem == null && processFinished)
@@ -58,7 +67,11 @@ public class Smelter : Interactable
         if (processing)
         {
             processingTimer -= Time.deltaTime;
-            if (processingTimer < 0) processFinished = true;
+            if (processingTimer < 0)
+            {
+                processFinished = true;
+                particleObject.SetActive(false);
+            }
         }
     }
 }
